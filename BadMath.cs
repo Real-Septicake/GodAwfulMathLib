@@ -5,8 +5,7 @@ namespace ReallyBadMath
         protected readonly int data;
 
         public BadMathInt(int val){
-            /*if(val>=0)*/data = val;
-            //else throw new ArgumentException("Value cannot be negative, support for negative numbers will come in a later release");
+            data = val;
         }
 
         public static implicit operator int(BadMathInt b) => b.data;
@@ -70,6 +69,14 @@ namespace ReallyBadMath
             else return --b1 > --b2;
         }
 
+        public static bool operator >=(BadMathInt b1, BadMathInt b2){
+            return b1 > b2 || b1 == b2;
+        }
+
+        public static bool operator <=(BadMathInt b1, BadMathInt b2){
+            return b1 < b2 || b1 == b2;
+        }
+        
         public override string ToString() => data.ToString();
     }
 
