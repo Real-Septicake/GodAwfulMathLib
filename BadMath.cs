@@ -1,6 +1,6 @@
 namespace ReallyBadMath
 {
-    public static class BadMathInt
+    public class BadMathInt
     {
         protected readonly int data;
 
