@@ -2,3 +2,4 @@
 /DumbMathThing.csproj
 /obj
 /Program.cs
+BenchmarkDotNet.Artifacts/

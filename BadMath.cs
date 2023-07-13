@@ -1,6 +1,6 @@
 namespace ReallyBadMath
 {
-    class BadMathInt
+    public static class BadMathInt
     {
         protected readonly int data;
 
@@ -76,11 +76,11 @@ namespace ReallyBadMath
         public static bool operator <=(BadMathInt b1, BadMathInt b2){
             return b1 < b2 || b1 == b2;
         }
-        
+
         public override string ToString() => data.ToString();
     }
 
-    class BadMathFunc{
+    public static class BadMathFunc{
         public static BadMathInt Pow(BadMathInt b, BadMathInt exp){
             if(exp == 0) return (BadMathInt) 1;
             else if(exp == 1) return b;
