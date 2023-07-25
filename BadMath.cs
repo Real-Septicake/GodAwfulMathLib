@@ -9,7 +9,7 @@ namespace ReallyBadMath
         }
 
         public static implicit operator int(BadMathInt b) => b.data;
-        public static explicit operator BadMathInt(int i) => new BadMathInt(i);
+        public static explicit operator BadMathInt(int i) => new(i);
 
         public static BadMathInt operator +(BadMathInt b1, BadMathInt b2){
             if(b2 == 0) return b1;
@@ -29,9 +29,15 @@ namespace ReallyBadMath
 
         public static BadMathInt operator /(BadMathInt b1, BadMathInt b2){
             if(b2 == 0) throw new DivideByZeroException("Division of " + b1 + " by zero.");
-            else if(b1 < 1) return (BadMathInt)0;
-            else if(b1 == b2) return (BadMathInt)1;
+            else if(b1 < b2) return (BadMathInt) 0;
+            else if(b1 == b2) return (BadMathInt) 1;
             else return (BadMathInt) (1 + ((b1 - b2) / b2));
+        }
+
+        public static BadMathInt operator %(BadMathInt b1, BadMathInt b2){
+            if(b1 == 0) return (BadMathInt) 0;
+            else if(b1 < b2) return b1;
+            else return (b1 - b2) % b2;
         }
 
         public static BadMathInt operator -(BadMathInt b) => (BadMathInt)(-b.data);
