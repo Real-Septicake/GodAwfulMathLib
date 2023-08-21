@@ -13,12 +13,12 @@ namespace ReallyBadMath
 
         public static BadMathInt operator +(BadMathInt b1, BadMathInt b2){
             if(b2 == 0) return b1;
-            else return (BadMathInt) (b1 + 1) + (BadMathInt) (b2 - 1);
+            else return ++b1 + --b2;
         }
 
         public static BadMathInt operator -(BadMathInt b1, BadMathInt b2){
             if(b2 == 0) return b1;
-            else return (BadMathInt) (b1 - (int) (b2--));
+            else return (BadMathInt) (b1 - (int) (--b2));
         }
 
         public static BadMathInt operator *(BadMathInt b1, BadMathInt b2){
