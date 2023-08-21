@@ -17,7 +17,8 @@ namespace ReallyBadMath
         }
 
         public static BadMathInt operator -(BadMathInt b1, BadMathInt b2){
-            if(b2 == 0) return --b1;
+            if(b2 == 0) return b1;
+            if(b2 == 1) return --b1;
             else return b1 - (--b2);
         }
 
