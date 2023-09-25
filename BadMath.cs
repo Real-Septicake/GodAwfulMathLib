@@ -178,6 +178,12 @@ namespace ReallyBadMath
                 if(cDecimals > 0)
                 {
                     cDecimals--; rDecimals++;
+
+                    if(rDecimals == 10000)
+                    {
+                        rData++;
+                        rDecimals = 0;
+                    }
                 }
             }
 
